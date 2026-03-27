@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 釜山＋慶州 跨世代目錄首頁</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="logo">Busan 2026</div>
+        <ul class="nav-links">
+            <li><a href="#rules">溫馨提醒</a></li>
+            <li><a href="#language">溝通字卡</a></li>
+            <li><a href="#itinerary">每日手冊</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-bg" style="background-image: url('images/hero.png');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="members-badge glass">👨‍👩‍👧‍👦 家族 5 人歡聚旅行</div>
+            <h1 class="fade-in-up">2026 <span class="highlight">釜山＋慶州</span><br>跨世代旅行</h1>
+            <p class="dates fade-in-up delay-1"><i class="far fa-calendar-alt"></i> 2026/05/09 (六) - 05/15 (五)</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="rules" class="section-container">
+            <h2 class="section-title">🛡️ 我們的溫馨行動準則</h2>
+            <div class="rules-grid">
+                <div class="rule-card glass">
+                    <div class="rule-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>自在飲食無負擔</h3>
+                    <p>貼心準備：為媽媽準備無牛骨成分的高湯底；為長輩與孩子避開辣味與胡椒。點餐時彈性分區分桌。</p>
+                </div>
+                <div class="rule-card glass">
+                    <div class="rule-icon"><i class="fas fa-taxi"></i></div>
+                    <h3>輕鬆交通守則</h3>
+                    <p>機場來回皆安排空間寬敞的 7 人座 Jumbo Taxi。遇到市區爬坡直接攔「2 台計程車」分乘，平地則自在體驗當地 KTX 與捷運。</p>
+                </div>
+                <div class="rule-card glass">
+                    <div class="rule-icon"><i class="fas fa-mask"></i></div>
+                    <h3>專屬醫美休養期 (Day 6)</h3>
+                    <p>保養後首重休息與避光，行程將轉移至舒適的室內百貨或地下街，配戴口罩避開冷風與日曬。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="language" class="section-container">
+            <h2 class="section-title">💬 溝通達人字卡 (點擊卡片即可複製)</h2>
+            <div class="cards-container">
+                <div class="language-card glass">
+                    <h4>給餐廳阿姨看：飲食特製需求</h4>
+                    <p class="kr-text" id="food-kr">어머니는 소고기를 드시지 않습니다. 소고기 육수도 빼주세요. 그리고 아이와 어르신이 먹을 거라 청양고추, 고춧가루, 후추, 다대기를 완전히 빼주세요.</p>
+                    <p class="zh-text">我們不吃牛與牛骨湯。因為有小孩與長輩，請完全不要加青陽辣椒、辣椒粉、胡椒和紅色辣醬。</p>
+                    <button class="copy-btn" onclick="copyText('food-kr', this)"><i class="far fa-copy"></i> 一鍵複製</button>
+                </div>
+                <div class="language-card glass">
+                    <h4>給計程車司機看：我們分兩台車</h4>
+                    <p class="kr-text" id="taxi-kr">기사님, 일행이 다른 택시를 타고 뒤따라오고 있습니다. 이 주소로 곧장 가주시면 됩니다.</p>
+                    <p class="zh-text">司機大哥您好，我們的親友搭乘另一台計程車跟在後面，請直接載我們前往該地址，謝謝您。</p>
+                    <button class="copy-btn" onclick="copyText('taxi-kr', this)"><i class="far fa-copy"></i> 一鍵複製</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="itinerary" class="section-container">
+            <h2 class="section-title">📖 每日深度導覽手冊</h2>
+            <div class="day-cards-grid">
+                
+                <a href="day1.html" class="day-nav-card">
+                    <div class="day-card-bg" style="background-image: url('images/day1_main.png');"></div>
+                    <div class="day-card-overlay">
+                        <p>5/9 (六)</p>
+                        <h3>Day 1 ｜ 啟航與舒適首泊</h3>
+                    </div>
+                </a>
+
+                <a href="day2.html" class="day-nav-card">
+                    <div class="day-card-bg" style="background-image: url('images/day2.png');"></div>
+                    <div class="day-card-overlay">
+                        <p>5/10 (日)</p>
+                        <h3>Day 2 ｜ 穿越古都慶州</h3>
+                    </div>
+                </a>
+
+                <a href="day3.html" class="day-nav-card">
+                    <div class="day-card-bg" style="background-image: url('images/day3.png');"></div>
+                    <div class="day-card-overlay">
+                        <p>5/11 (一)</p>
+                        <h3>Day 3 ｜ 蔚藍海岸白淺灘</h3>
+                    </div>
+                </a>
+
+                <a href="day4.html" class="day-nav-card">
+                    <div class="day-card-bg" style="background-image: url('images/day4_main.png');"></div>
+                    <div class="day-card-overlay">
+                        <p>5/12 (二) - VBP 啟用</p>
+                        <h3>Day 4 ｜ 松島與海雲台夕陽</h3>
+                    </div>
+                </a>
+
+                <a href="day5.html" class="day-nav-card">
+                    <div class="day-card-bg" style="background-image: url('images/day5_lotte.png');"></div>
+                    <div class="day-card-overlay">
+                        <p>5/13 (三)</p>
+                        <h3>Day 5 ｜ 樂天童話與膠囊列車</h3>
+                    </div>
+                </a>
+
+                <a href="day6.html" class="day-nav-card">
+                    <div class="day-card-bg" style="background-image: url('images/day6_bbq.png');"></div>
+                    <div class="day-card-overlay">
+                        <p>5/14 (四)</p>
+                        <h3>Day 6 ｜ 專屬保養與市區血拚</h3>
+                    </div>
+                </a>
+
+                <a href="day7.html" class="day-nav-card">
+                    <div class="day-card-bg" style="background-image: url('images/hero.png');"></div>
+                    <div class="day-card-overlay">
+                        <p>5/15 (五)</p>
+                        <h3>Day 7 ｜ 回憶滿載從容返程</h3>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <footer><p>Designed with ❤️ for a wonderful 2026 family trip.</p></footer>
+
+    <script>
+        function copyText(elementId, btnElement) {
+            const textToCopy = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const originalText = btnElement.innerHTML;
+                btnElement.innerHTML = '<i class="fas fa-check"></i> 複製成功!';
+                btnElement.style.background = 'rgba(76, 175, 80, 0.4)';
+                btnElement.style.color = '#fff';
+                setTimeout(() => {
+                    btnElement.innerHTML = originalText;
+                    btnElement.style.background = '';
+                    btnElement.style.color = '';
+                }, 2000);
+            });
+        }
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) { nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
+        });
+    </script>
+</body>
+</html>
