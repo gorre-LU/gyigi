@@ -1,8 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 依據不同頁面設定不同的鋼琴輕音樂
-    // 全部頁面統一採用同一首背景音樂
-    const audioSrc = './music/bgm.mp3';
-
     // 建立播放器 UI
     const playerHtml = `
         <div id="music-player" class="glass">
@@ -10,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <i class="fas fa-play"></i> <span>播放音樂</span>
             </button>
             <audio id="bgMusic" loop autoplay>
-                <source src="${audioSrc}">
+                <source src="./music/bgm.mp3">
             </audio>
         </div>
     `;
@@ -18,9 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 注入 HTML
     document.body.insertAdjacentHTML('beforeend', playerHtml);
 
-    // 注入 CSS (加上轉場用的 class)
+    // 注入 CSS
     const style = document.createElement('style');
-    style.id = 'music-style'; // 標記為我們的專屬樣式
+    style.id = 'music-style';
     style.innerHTML = `
         #music-player {
             position: fixed;
@@ -64,14 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
         @keyframes bounce {
             from { transform: translateY(0); }
             to { transform: translateY(-3px); }
-        }
-        /* 換頁淡入淡出動畫設定 */
-        .spa-transition {
-            transition: opacity 0.3s ease-in-out;
-            opacity: 1;
-        }
-        .spa-faded {
-            opacity: 0;
         }
     `;
     document.head.appendChild(style);
@@ -117,9 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
         playerContext.classList.remove('music-playing');
     });
 
-    // 嘗試自動播放 (現代瀏覽器通常會阻擋無互動的自動播放，所以加上互動觸發)
+    // 頁面載入後自動嘗試播放
     const tryAutoplay = async () => {
         try {
+            // 這個寫法能讓有互動記憶的瀏覽器自動播放
             await music.play();
         } catch (err) {
             console.log('Autoplay prevented by browser. Waiting for user interaction.');
@@ -132,133 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.addEventListener('scroll', startOnInteraction, { once: true });
         }
     };
-
-    // 初始化第一次嘗試播放
-    if (!window.musicInitialized) {
-        tryAutoplay();
-        window.musicInitialized = true;
-    }
-
-    // ==========================================
-    // SPA 無縫換頁路由 (PJAX 核心)
-    // ==========================================
-    const navigateTo = async (url) => {
-        try {
-            // 抓出原本要過場的節點
-            const getTransitionNodes = () => Array.from(document.body.children)
-                .filter(c => c.id !== 'music-player' && c.tagName !== 'SCRIPT');
-
-            // 1. 舊畫面淡出
-            const oldNodes = getTransitionNodes();
-            oldNodes.forEach(c => {
-                c.classList.add('spa-transition');
-                c.classList.add('spa-faded');
-            });
-
-            // 2. 取回新頁面 HTML
-            const response = await fetch(url);
-            const html = await response.text();
-            const newDoc = new DOMParser().parseFromString(html, 'text/html');
-
-            // 3. 等待淡出動畫完畢
-            setTimeout(() => {
-                // 原頁面的資源清理 (舊的 style tags 等)
-                document.head.querySelectorAll('style:not(#music-style)').forEach(s => s.remove());
-                oldNodes.forEach(c => c.remove());
-
-                // 替換標題與樣式
-                document.title = newDoc.title;
-                newDoc.head.querySelectorAll('style').forEach(s => {
-                    document.head.appendChild(document.importNode(s, true));
-                });
-
-                // 植入新畫面的 DOM
-                const newNodes = Array.from(newDoc.body.children)
-                    .filter(c => c.id !== 'music-player' && c.tagName !== 'SCRIPT');
-                
-                newNodes.forEach(c => {
-                    c.classList.add('spa-transition');
-                    c.classList.add('spa-faded'); // 剛插入時透明
-                    document.body.insertBefore(document.importNode(c, true), document.getElementById('music-player'));
-                });
-
-                // 滾回頂部並重置 navbar 滾動監聽造成的殘留 class
-                window.scrollTo(0, 0);
-                const nav = document.getElementById('navbar');
-                if (nav) nav.classList.remove('scrolled');
-
-                // 觸發重新渲染，執行淡入
-                requestAnimationFrame(() => {
-                    newNodes.forEach(c => c.classList.remove('spa-faded'));
-                });
-            }, 300); // 配合 CSS 的 0.3s
-            
-        } catch (error) {
-            console.error('SPA Navigation Failed:', error);
-            window.location.href = url; // 若出錯直接使用原生換頁
-        }
-    };
-
-    // 全域監聽原本的連結點擊
-    document.addEventListener('click', (e) => {
-        // 尋找被點擊的是不是 <a> 標籤
-        const a = e.target.closest('a');
-        if (!a || !a.href) return;
-        
-        // 檢查是否為同一網域且指向上下文 HTML，並且不是錨點 (hash)
-        const url = new URL(a.href);
-        if (url.origin === window.location.origin && url.pathname.endsWith('.html')) {
-            // 【重要修復】如果是直接雙擊在檔案總管打開 (file://)，瀏覽器會基於安全阻擋背景載入(CORS)與修改歷史紀錄(pushState)
-            // 所以在 file:// 協定下，我們不啟動 SPA 功能，直接讓瀏覽器原生跳轉 (降級處理)
-            if (window.location.protocol === 'file:') {
-                return; // 不去 e.preventDefault()，直接用傳統方式換頁
-            }
-
-            e.preventDefault();
-            try {
-                window.history.pushState({}, '', url.href); // 同步網址列
-            } catch (err) { /* ignore fallback errors */ }
-            navigateTo(url.href);
-        }
-    });
-
-    // 支援瀏覽器上一頁 / 下一頁
-    window.addEventListener('popstate', () => {
-        navigateTo(window.location.href);
-    });
-
-    // ==========================================
-    // 全域功能移植 (解決 SPA 抽換後原生腳本不執行的問題)
-    // ==========================================
     
-    // 首頁用到的文字複製功能
-    window.copyText = function(elementId, btnElement) {
-        const el = document.getElementById(elementId);
-        if (!el) return;
-        const textToCopy = el.innerText;
-        navigator.clipboard.writeText(textToCopy).then(() => {
-            const originalText = btnElement.innerHTML;
-            btnElement.innerHTML = '<i class="fas fa-check"></i> 複製成功!';
-            btnElement.style.background = 'rgba(76, 175, 80, 0.4)';
-            btnElement.style.color = '#fff';
-            setTimeout(() => {
-                btnElement.innerHTML = originalText;
-                btnElement.style.background = '';
-                btnElement.style.color = '';
-            }, 2000);
-        });
-    };
-
-    // 導覽列的滾動特效 (全域共用)
-    window.addEventListener('scroll', () => {
-        const nav = document.getElementById('navbar');
-        if (nav) {
-            if (window.scrollY > 50) { 
-                nav.classList.add('scrolled'); 
-            } else { 
-                nav.classList.remove('scrolled'); 
-            }
-        }
-    });
-
+    tryAutoplay();
 });
