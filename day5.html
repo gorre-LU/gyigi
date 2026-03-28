@@ -3,10 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 5 ｜ 遊樂園瘋玩日 - 2026 釜山家族旅行</title>
+    <title>Day 5 ｜ 東釜山極限放電與膠囊列車 - 2026 釜山家族旅行</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .timeline { margin: 30px 0; padding-left: 20px; border-left: 3px solid rgba(255,255,255,0.2); }
+        .timeline-item { position: relative; margin-bottom: 25px; padding-left: 25px; }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -31px; top: 0; width: 12px; height: 12px;
+            background: #fff; border-radius: 50%; box-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+        .time-badge { display: inline-block; background: rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 20px; font-weight: 600; margin-bottom: 10px; font-size: 0.9em; }
+        .timeline-content h3 { margin: 0 0 10px 0; font-size: 1.2em; color: #fff; }
+        .timeline-content p { margin: 0; color: rgba(255,255,255,0.85); line-height: 1.6; }
+        .vbp-badge { display: inline-block; background: #e74c3c; color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; margin-left: 10px; vertical-align: middle; }
+        .branch { margin-top: 10px; padding: 10px; background: rgba(255,255,255,0.08); border-radius: 8px; border-left: 3px solid #ff9f43; }
+        .branch h4 { margin: 0 0 5px 0; color: #ff9f43; font-size: 1em; }
+
+        .action-links { margin-top: 12px; margin-bottom: 8px; }
+        .action-links a { color: #fff; text-decoration: none; background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 6px; font-size: 0.85em; margin-right: 8px; margin-bottom: 8px; display: inline-block; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.1); }
+        .action-links a:hover { background: rgba(255,255,255,0.3); transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        .action-links a.site-link { background: rgba(52, 152, 219, 0.3); border-color: rgba(52, 152, 219, 0.5); }
+        .action-links a.site-link:hover { background: rgba(52, 152, 219, 0.6); }
+        .timeline-img { width: 100%; border-radius: 12px; margin-top: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); display: block; border: 1px solid rgba(255,255,255,0.1); }
+    </style>
 </head>
 <body>
     <nav id="navbar" class="scrolled">
@@ -20,50 +41,104 @@
         <div class="hero-bg" style="background-image: url('images/day5_lotte.png');"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="fade-in-up">Day 5 ｜ 遊樂園瘋玩＋膠囊列車追夕陽</h1>
-            <p class="dates fade-in-up delay-1">5/13 (三) - 滑車放電、樂天世界、青沙浦烤貝</p>
+            <h1 class="fade-in-up">Day 5 ｜ 東釜山極限放電與膠囊列車</h1>
+            <p class="dates fade-in-up delay-1">5/13 (三) - 歡樂與海岸線的交錯</p>
         </div>
     </header>
 
     <main class="article-content glass fade-in-up delay-2">
         <div class="article-block">
-            <h2>🏎️ 早上先來場斜坡滑車暖個身</h2>
-            <p>09:30 搭車前往機張，用 VBP 免費玩 <strong>Skyline Luge 斜坡滑車</strong> <a href="https://www.google.com/maps/search/?api=1&query=Skyline+Luge+Busan" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> 斜坡滑車</a>。就是坐在一台小車上面，沿著蜿蜒的坡道往下滑，速度可以自己控制，小朋友跟長輩都能玩得很開心，不會太刺激也不會無聊。</p>
-            <p>11:45 玩完之後，走過去旁邊的 Lotte Outlet <a href="https://www.google.com/maps/search/?api=1&query=Lotte+Premium+Outlet+Dongbusan" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> Outlet</a> 吃中餐。美食街選擇很多，想吃韓牛也有、想吃簡單的也行，看大家的心情決定就好。</p>
-        </div>
+            <h2>行程時間表</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time-badge">09:30 - 11:30</div>
+                    <div class="timeline-content">
+                        <h3>Skyline Luge 斜坡滑車 <span class="vbp-badge">VBP 續用</span></h3>
+                        <p>早上出發前往機張區！靠著 VBP 玩好玩滿，全家體驗卡丁車般的下坡快感，安全又刺激，保證每個人的笑容都停不下來。</p>
+                        <div class="action-links">
+                            <a href="https://map.naver.com/p/search/스카이라인루지%20부산" target="_blank"><i class="fas fa-map-marked-alt"></i> Naver Map</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Skyline+Luge+Busan" target="_blank"><i class="fas fa-map-marker-alt"></i> Google Maps</a>
+                            <a href="https://www.skylineluge.kr/busan/" target="_blank" class="site-link"><i class="fas fa-globe"></i> 官方網站</a>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="article-block">
-            <h2>🎠 樂天世界：各玩各的也很開心</h2>
-            <p>13:00 用 VBP 免費入場 <strong>釜山樂天世界</strong> <a href="https://www.google.com/maps/search/?api=1&query=Lotte+World+Adventure+Busan" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> 樂天世界</a>，這是韓國最新最大的主題樂園之一。</p>
-            
-            <img src="images/day5_lotte.png" alt="夢幻的樂天世界" class="article-img">
-            
-            <p>這裡我們可以分開行動：爸爸跟媽咪帶女兒去衝遊樂設施，讓她盡情放電；阿嬤跟舅媽如果不想排隊曬太陽，可以到園區裡面超舒服的冷氣咖啡廳坐著吃蛋糕，或者直接回隔壁的 Outlet 繼續逛街血拚。反正大家用手機保持聯繫，各自做喜歡的事，這才是度假的真諦嘛 😊</p>
-            
-            <div class="bonus-box">
-                <h4>✨ 空檔時間的備案</h4>
-                <p>從樂天世界出來到搭膠囊列車之間，如果還有時間：
-                <br>👉 想看壯觀廟宇的人，可以去<strong>海東龍宮寺</strong> <a href="https://www.google.com/maps/search/?api=1&query=Haedong+Yonggungsa" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> 海東龍宮寺</a>（不過要爬一些階梯，量力而為）
-                <br>👉 只想坐著看海放空的人，推薦去超有名的 <strong>Waveon 海景咖啡廳</strong> <a href="https://www.google.com/maps/search/?api=1&query=Waveon+Coffee,+Busan" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> Waveon</a>，整面落地窗對著大海，點杯飲料坐著就是一種享受 🌊</p>
+                <div class="timeline-item">
+                    <div class="time-badge">11:45 - 13:00</div>
+                    <div class="timeline-content">
+                        <h3>午餐｜Lotte Outlet 美食街或機張韓牛</h3>
+                        <p>就近於 Lotte Outlet 裡解決或是選擇當地特產機張韓牛，完美銜接想單純「吃牛肉」與「吃辣」的各種任性需求。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time-badge">13:00 - 15:30</div>
+                    <div class="timeline-content">
+                        <h3>樂天世界分流大作戰 <span class="vbp-badge">VBP 續用</span></h3>
+                        <div class="branch">
+                            <h4>🎢 瘋玩組 (你＆老婆＆女兒)</h4>
+                            <p>憑著 VBP，我們衝進「釜山樂天世界魔法森林」，暢玩各種歡樂遊樂設施、看遊行，大人小孩一起徹底釋放童心！</p>
+                        </div>
+                        <div class="branch" style="border-left-color: #2ecc71;">
+                            <h4>☕ 悠閒逛街組 (媽媽＆舅媽)</h4>
+                            <p>媽媽和舅媽可以在旁邊的 Lotte Outlet 慢慢逛街挖寶，或者找間涼爽的室內咖啡廳喝下午茶，享受自己的悠閒時光～</p>
+                        </div>
+                        <div class="action-links">
+                            <a href="https://map.naver.com/p/search/롯데월드%20어드벤처%20부산" target="_blank"><i class="fas fa-map-marked-alt"></i> 樂天世界 Naver Map</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Lotte+World+Adventure+Busan" target="_blank"><i class="fas fa-map-marker-alt"></i> Google Maps</a>
+                            <a href="https://adventurebusan.lotteworld.com/" target="_blank" class="site-link"><i class="fas fa-globe"></i> 官方網站</a>
+                        </div>
+                        <img src="images/lotte_world.png" alt="釜山樂天世界魔法森林" class="timeline-img">
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time-badge">16:30 - 18:00</div>
+                    <div class="timeline-content">
+                        <h3>天空膠囊小火車與海岸列車</h3>
+                        <p>前往尾浦站大會師！安排 4 人乘坐自費的「天空膠囊小火車」，懸在空中慢慢欣賞無敵海景；而這時可推派 1 人利用 VBP 搭乘下方的「海岸列車」前行。最後全家在「青沙浦」站歡喜會合。</p>
+                        <div class="action-links">
+                            <a href="https://map.naver.com/p/search/해운대블루라인파크" target="_blank"><i class="fas fa-map-marked-alt"></i> 尾浦站 Naver Map</a>
+                            <a href="https://www.bluelinepark.com/" target="_blank" class="site-link"><i class="fas fa-globe"></i> 官方預約網站</a>
+                        </div>
+                        <img src="images/capsule.png" alt="超夢幻海岸線膠囊列車" class="timeline-img">
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time-badge">18:30 - 20:00</div>
+                    <div class="timeline-content">
+                        <h3>晚餐｜青沙浦無敵烤貝</h3>
+                        <p>聽著海浪聲吃最新鮮的烤貝！我們把烤網實施「分區處理」：半邊烤原味鮮甜不加料，另外半邊加滿辣醬跟起司狂暴模式，滿足不同味蕾。</p>
+                        <div class="action-links">
+                            <a href="https://map.naver.com/p/search/청사포%20조개구이" target="_blank"><i class="fas fa-map-marked-alt"></i> 青沙浦烤貝 Naver Map</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time-badge">20:30</div>
+                    <div class="timeline-content">
+                        <h3>洗衣任務</h3>
+                        <p>返回海雲台的飯店，今晚還有一個秘密任務：用套房裡的洗衣機把前幾天累積的髒衣服一次洗乾淨，帶一身清爽回家！</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>📌 貼心小提醒</h4>
+                <p>膠囊小火車超熱門，記得出發前兩到三週就先上官網搶票！玩 Luge 滑車時穿好走的包鞋，裙子不太方便記得換褲裝。今晚回飯店有洗衣任務，大家把要洗的衣服都丟出來一起洗，明天就能穿乾淨衣服繼續玩啦～</p>
             </div>
         </div>
 
-        <div class="article-block">
-            <h2>🚊 全釜山最美的交通工具登場！</h2>
-            <p>16:30 前往尾浦站 <a href="https://www.google.com/maps/search/?api=1&query=Haeundae+Blueline+Park+Mipo+Station" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> 尾浦站</a>，準備搭乘超夢幻的海岸線列車。</p>
-            
-            <img src="images/day5.png" alt="海雲台膠囊列車夕陽" class="article-img">
-            
-            <p>我們 4 個人去搭色彩繽紛的<strong>天空膠囊小火車</strong>，軌道就蓋在海岸邊上，離海超～近～的。剩下 1 個人可以用 VBP 免費搭下面的海岸列車。兩邊走的是同一條路線，最後在 <strong>青沙浦站</strong> <a href="https://www.google.com/maps/search/?api=1&query=Cheongsapo+Station" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> 青沙浦</a> 碰面，一起看夕陽 🌅</p>
-            <p>18:30 到了青沙浦就是吃<strong>烤貝</strong>的時間了 <a href="https://www.google.com/maps/search/?api=1&query=Cheongsapo+Grilled+Clams" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> 烤貝村</a>！烤網上面：一半是原味的清甜海鮮，另一半淋上起司辣醬，嗜辣的人吃到流淚那種爽感。吃飽之後 20:30 回飯店，順手把這幾天的衣服丟進洗衣機洗一洗，明天又是乾乾淨淨的一天。</p>
-        </div>
-
         <div class="day-nav-footer">
-            <a href="day4.html" class="nav-btn"><i class="fas fa-arrow-left"></i> Day 4：搭纜車飛過大海</a>
-            <a href="day6.html" class="nav-btn">Day 6：逛街逛到腿軟 <i class="fas fa-arrow-right"></i></a>
+            <a href="day4.html" class="nav-btn"><i class="fas fa-arrow-left"></i> Day 4</a>
+            <a href="day6.html" class="nav-btn">Day 6：西面室內行 <i class="fas fa-arrow-right"></i></a>
         </div>
     </main>
 
     <footer><p>Designed with ❤️ for a wonderful 2026 family trip.</p></footer>
+    <script src="music.js"></script>
 </body>
 </html>

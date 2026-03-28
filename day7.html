@@ -3,10 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 7 ｜ 帶著回憶回家 - 2026 釜山家族旅行</title>
+    <title>Day 7 ｜ 從容返程 - 2026 釜山家族旅行</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .timeline { margin: 30px 0; padding-left: 20px; border-left: 3px solid rgba(255,255,255,0.2); }
+        .timeline-item { position: relative; margin-bottom: 25px; padding-left: 25px; }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -31px; top: 0; width: 12px; height: 12px;
+            background: #fff; border-radius: 50%; box-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+        .time-badge { display: inline-block; background: rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 20px; font-weight: 600; margin-bottom: 10px; font-size: 0.9em; }
+        .timeline-content h3 { margin: 0 0 10px 0; font-size: 1.2em; color: #fff; }
+        .timeline-content p { margin: 0; color: rgba(255,255,255,0.85); line-height: 1.6; }
+        
+        .action-links { margin-top: 12px; margin-bottom: 8px; }
+        .action-links a { color: #fff; text-decoration: none; background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 6px; font-size: 0.85em; margin-right: 8px; margin-bottom: 8px; display: inline-block; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.1); }
+        .action-links a:hover { background: rgba(255,255,255,0.3); transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        .action-links a.site-link { background: rgba(52, 152, 219, 0.3); border-color: rgba(52, 152, 219, 0.5); }
+        .action-links a.site-link:hover { background: rgba(52, 152, 219, 0.6); }
+        .timeline-img { width: 100%; max-width: 500px; border-radius: 12px; margin-top: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); display: block; border: 1px solid rgba(255,255,255,0.1); }
+    </style>
 </head>
 <body>
     <nav id="navbar" class="scrolled">
@@ -20,35 +38,67 @@
         <div class="hero-bg" style="background-image: url('images/hero.png');"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="fade-in-up">Day 7 ｜ 帶著滿滿回憶回家</h1>
-            <p class="dates fade-in-up delay-1">5/15 (五) - 不趕不急，從容飛回高雄</p>
+            <h1 class="fade-in-up">Day 7 ｜ 從容返程</h1>
+            <p class="dates fade-in-up delay-1">5/15 (五) - 收拾難忘的回憶，期待下次相聚</p>
         </div>
     </header>
 
     <main class="article-content glass fade-in-up delay-2">
         <div class="article-block">
-            <h2>☕ 睡到自然醒的最後一個早晨</h2>
-            <p>08:30 今天完全不用趕行程。大家睡飽了再慢慢起來，悠悠哉哉地整理行李。這幾天買的戰利品、面膜、零食，通通塞進行李箱。如果箱子裝不下… 嗯，那就是買得夠多的證明 😆</p>
-            <p>可以散步到旁邊的便利商店買個三角飯糰和咖啡當早餐，或者找間有落地窗的咖啡廳坐一坐，回味一下這幾天的點點滴滴。最後一次看看海雲台的天空，拍張照留念 📸</p>
-        </div>
+            <h2>行程時間表</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time-badge">08:30 - 10:30</div>
+                    <div class="timeline-content">
+                        <h3>悠閒早晨與瘋狂塞箱</h3>
+                        <p>今天不用趕行程，睡到自然醒！到附近的便利超商買杯香醇咖啡與胖胖瓶香蕉牛奶當早餐，回房間悠哉地把滿載戰利品的行李箱給確實封印。</p>
+                    </div>
+                </div>
 
-        <div class="article-block">
-            <h2>🚕 大台車來接我們去機場囉</h2>
-            <p>11:00 退房之後，一樣預約好了 <strong>Kakao T Venti</strong> 在飯店門口等。行李箱再怎麼膨脹都塞得進去，長輩不用提著重重的東西走地下道換車，直接從飯店門口上車，一路舒舒服服地開到金海機場 <a href="https://www.google.com/maps/search/?api=1&query=Gimhae+International+Airport" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> 金海機場</a>。</p>
-        </div>
+                <div class="timeline-item">
+                    <div class="time-badge">11:00 - 12:00</div>
+                    <div class="timeline-content">
+                        <h3>完美轉場前往機場</h3>
+                        <p>海雲台飯店辦理退房。此時預約好的「Kakao T Venti 大型休旅車」已在門口靜靜等候，再度化身全家人的移動堡壘，直奔金海機場，跟搬行李的疲憊說拜拜。</p>
+                        <div class="action-links">
+                            <a href="https://map.naver.com/p/search/김해국제공항" target="_blank"><i class="fas fa-map-marked-alt"></i> Naver Map</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Gimhae+International+Airport" target="_blank"><i class="fas fa-map-marker-alt"></i> Google Maps</a>
+                            <a href="https://www.airport.co.kr/gimhaeeng/index.do" target="_blank" class="site-link"><i class="fas fa-globe"></i> 官方網站</a>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="article-block">
-            <h2>🍜 在機場吃最後一餐韓國料理</h2>
-            <p>12:00 到機場之後，先辦好報到手續，把這幾天累積的退稅單據一次處理完。然後就是自由活動時間！機場裡面有美食廣場，想再吃一碗拌飯、喝一碗雪濃湯、或者最後再來一份炸雞都可以。</p>
-            <p>15:00 登機，搭德威航空 (TW675) 飛回高雄。大概 16:50 就降落了。一走出來，南台灣熟悉的溫暖空氣撲面而來，家還是最好的。但回頭看看手機相簿裡塞滿的幾千張照片，嘴角會忍不住上揚 — 這趟釜山＋慶州的家族旅行，真的太棒了 ✨</p>
+                <div class="timeline-item">
+                    <div class="time-badge">12:00 - 13:30</div>
+                    <div class="timeline-content">
+                        <h3>手續完成與最後滋味</h3>
+                        <p>至機場櫃檯報到同時辦理最讓人開心的單據退稅。中午就在機場的美食廣場解決，做最後韓國風味大收尾。</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time-badge">15:00 - 16:50</div>
+                    <div class="timeline-content">
+                        <h3>降落高雄，滿載而歸</h3>
+                        <p>搭乘德威航空 (TW675) 起飛返回溫暖的家。傍晚抵達高雄小港機場，帶著這七天滿滿的美麗回憶，圓滿結束 2026 年我們的釜山大冒險！</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>📌 貼心小提醒</h4>
+                <p>出門前全員確認：護照、手機、充電器、錢包，缺一不可！退房時記得檢查床頭、浴室和充電插座旁有沒有落下東西。機場退稅要預留時間排隊，建議提早到。液體類保養品和化妝品記得放進託運行李。這趟旅行辛苦大家了，我們一起把美好回憶帶回家吧 🎉</p>
+            </div>
         </div>
 
         <div class="day-nav-footer">
-            <a href="day6.html" class="nav-btn"><i class="fas fa-arrow-left"></i> Day 6：逛街逛到腿軟</a>
-            <a href="index.html" class="nav-btn"><i class="fas fa-home"></i> 回首頁看看其他天</a>
+            <a href="day6.html" class="nav-btn"><i class="fas fa-arrow-left"></i> Day 6</a>
+            <a href="index.html" class="nav-btn">回首頁 <i class="fas fa-home"></i></a>
         </div>
     </main>
 
     <footer><p>Designed with ❤️ for a wonderful 2026 family trip.</p></footer>
+    <script src="music.js"></script>
 </body>
 </html>

@@ -3,10 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day 1 ｜ 啟航與舒適首泊 - 2026 釜山家族旅行</title>
+    <title>Day 1 ｜ 夜間抵達，迅速安頓 - 2026 釜山家族旅行</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .timeline { margin: 30px 0; padding-left: 20px; border-left: 3px solid rgba(255,255,255,0.2); }
+        .timeline-item { position: relative; margin-bottom: 25px; padding-left: 25px; }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -31px; top: 0; width: 12px; height: 12px;
+            background: #fff; border-radius: 50%; box-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+        .time-badge { display: inline-block; background: rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 20px; font-weight: 600; margin-bottom: 10px; font-size: 0.9em; }
+        .timeline-content h3 { margin: 0 0 10px 0; font-size: 1.2em; color: #fff; }
+        .timeline-content p { margin: 0; color: rgba(255,255,255,0.85); line-height: 1.6; }
+        
+        .action-links { margin-top: 12px; margin-bottom: 8px; }
+        .action-links a { color: #fff; text-decoration: none; background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 6px; font-size: 0.85em; margin-right: 8px; margin-bottom: 8px; display: inline-block; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.1); }
+        .action-links a:hover { background: rgba(255,255,255,0.3); transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        .action-links a.site-link { background: rgba(52, 152, 219, 0.3); border-color: rgba(52, 152, 219, 0.5); }
+        .action-links a.site-link:hover { background: rgba(52, 152, 219, 0.6); }
+        .timeline-img { width: 100%; max-width: 500px; border-radius: 12px; margin-top: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); display: block; border: 1px solid rgba(255,255,255,0.1); }
+    </style>
 </head>
 <body>
     <nav id="navbar" class="scrolled">
@@ -20,37 +38,63 @@
         <div class="hero-bg" style="background-image: url('images/day1_main.png');"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="fade-in-up">Day 1 ｜ 出發囉！</h1>
-            <p class="dates fade-in-up delay-1">5/9 (六) - 從高雄飛向釜山的第一晚</p>
+            <h1 class="fade-in-up">Day 1 ｜ 夜間抵達，迅速安頓</h1>
+            <p class="dates fade-in-up delay-1">5/9 (六) - 啟航釜山，養足精神再出發</p>
         </div>
     </header>
 
     <main class="article-content glass fade-in-up delay-2">
         <div class="article-block">
-            <h2>🛫 傍晚的飛機，剛剛好</h2>
-            <p>下午 17:55 從高雄出發，搭德威航空 (TW676) 直飛釜山。傍晚的航班不用早起趕路，中午還可以悠悠哉哉吃頓好的再出門。飛行時間大約三個半小時，看看窗外的雲海、吃個飛機餐，差不多晚上 21:35 就到金海機場了 <a href="https://www.google.com/maps/search/?api=1&query=Gimhae+International+Airport" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> 機場位置</a>。</p>
+            <h2>行程時間表</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time-badge">17:55 - 21:35</div>
+                    <div class="timeline-content">
+                        <h3>出發！直飛釜山</h3>
+                        <p>搭乘德威航空 (TW676) 由高雄直飛，晚班機不匆忙，抵達金海機場開啟美好旅程。</p>
+                        <div class="action-links">
+                            <a href="https://map.naver.com/p/search/김해국제공항" target="_blank"><i class="fas fa-map-marked-alt"></i> Naver Map</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Gimhae+International+Airport" target="_blank"><i class="fas fa-map-marker-alt"></i> Google Maps</a>
+                            <a href="https://www.airport.co.kr/gimhaeeng/index.do" target="_blank" class="site-link"><i class="fas fa-globe"></i> 官方網站</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time-badge">22:15 - 23:00</div>
+                    <div class="timeline-content">
+                        <h3>專屬大型計程車接送</h3>
+                        <p>入境後，不用擠地鐵。我們直接搭乘預約好的 <strong>Kakao T Venti (大型休旅計程車)</strong>，全家5人加行李一次全上，舒舒服服直達「釜山站城市飯店」。</p>
+                        <div class="action-links">
+                            <a href="https://map.naver.com/p/search/부산역%20시티호텔" target="_blank"><i class="fas fa-map-marked-alt"></i> Naver Map</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Busan+Station+City+Hotel" target="_blank"><i class="fas fa-map-marker-alt"></i> Google Maps</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="time-badge">23:00</div>
+                    <div class="timeline-content">
+                        <h3>洗洗睡，養精蓄銳</h3>
+                        <p>辦理入住。全家盡速就寢儲備明日體力！真正的冒險明天才開始呢。</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="info-box">
-                <h4>💡 小提醒</h4>
-                <p>飛機上冷氣有時候會有點強，建議幫長輩跟女兒帶件薄外套在隨身包裡，下飛機也用得到。韓國五月的晚上大概 15-18 度左右，還是有點涼涼的。</p>
+                <h4>📌 貼心小提醒</h4>
+                <p>下飛機後記得先開 eSIM 或插入韓國 SIM 卡確認上網正常，入境卡在機上就可以先填好省時間。到行李轉盤前可以先上個廁所，韓國機場的廁所又乾淨又不用排隊～今晚早點休息，養足精神明天才有體力玩！</p>
             </div>
         </div>
 
-        <div class="article-block">
-            <h2>🚕 大台計程車，行李通通塞進去</h2>
-            <p>晚上 22:15 左右入境之後，我們已經先預約好了 Kakao T Venti（就是韓國版的大台計程車），空間很寬敞，五個人加上所有行李都坐得舒舒服服。</p>
-            <p>從機場到飯店大概半小時多一點的車程，沿途可以看看釜山的夜景，跟家人聊聊對接下來幾天的期待～ 目的地是我們前三天的「根據地」——<strong>釜山站城市飯店</strong> <a href="https://www.google.com/maps/search/?api=1&query=Busan+Station+City+Hotel" target="_blank" class="map-link"><i class="fas fa-map-marker-alt"></i> 飯店地圖</a>，就在釜山站旁邊，之後不管搭 KTX 去慶州還是搭地鐵去南浦洞都超方便。</p>
-            
-            <img src="images/day1_main.png" alt="釜山站夜景" class="article-img">
-            
-            <p>到飯店大概 23:00，辦好入住之後就不另外安排宵夜了。今天最重要的任務就是：好好睡一覺 😴 把體力存起來，明天要去慶州穿韓服拍美照呢！</p>
-        </div>
-
         <div class="day-nav-footer">
-            <a href="index.html" class="nav-btn"><i class="fas fa-home"></i> 回首頁</a>
-            <a href="day2.html" class="nav-btn">Day 2：去慶州穿韓服 <i class="fas fa-arrow-right"></i></a>
+            <a href="index.html" class="nav-btn"><i class="fas fa-home"></i> 首頁</a>
+            <a href="day2.html" class="nav-btn">Day 2：慶州古都行 <i class="fas fa-arrow-right"></i></a>
         </div>
     </main>
 
     <footer><p>Designed with ❤️ for a wonderful 2026 family trip.</p></footer>
+    <script src="music.js"></script>
 </body>
 </html>
