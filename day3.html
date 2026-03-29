@@ -56,6 +56,7 @@
                         <h3>直達甘川文化村頂端</h3>
                         <p>搭大車直達彩色童話村「甘川文化村」的最頂端，完全不用爬坡。</p>
                         <div class="action-links">
+                            <a href="javascript:void(0);" class="video-btn" onclick="openVideo('https://www.youtube.com/embed/psmfEcObqqo?autoplay=1&origin=http://localhost', 'https://youtu.be/psmfEcObqqo')"><i class="fab fa-youtube"></i> 觀看甘川文化村影片</a>
                             <a href="https://map.naver.com/p/search/감천문화마을" target="_blank"><i class="fas fa-map-marked-alt"></i> Naver Map</a>
                             <a href="https://www.google.com/maps/search/?api=1&query=Gamcheon+Culture+Village" target="_blank"><i class="fas fa-map-marker-alt"></i> Google Maps</a>
                         </div>
@@ -133,6 +134,35 @@
     </main>
 
     <footer><p>Designed with ❤️ for a wonderful 2026 family trip.</p></footer>
+    
+    <!-- Video Modal -->
+    <div id="videoModal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="close-modal" onclick="closeVideo()">&times;</span>
+            <div class="video-container">
+                <iframe id="modalIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div style="text-align: center; margin-top: 15px; padding-bottom: 5px;">
+                <a id="modalDirectLink" href="#" target="_blank" style="color: #58a6ff; background: rgba(88, 166, 255, 0.1); padding: 8px 16px; border-radius: 8px; font-size: 0.9em; transition: 0.3s; text-decoration: none; border: 1px solid rgba(88, 166, 255, 0.3); display: inline-block;"><i class="fas fa-external-link-alt"></i> 若出現播放錯誤，請點擊這裡前往 YouTube 觀看</a>
+            </div>
+        </div>
+    </div>
+
     <script src="music.js"></script>
+    <script>
+        function openVideo(embedUrl, directUrl) {
+            document.getElementById('modalIframe').src = embedUrl;
+            document.getElementById('modalDirectLink').href = directUrl;
+            document.getElementById('videoModal').classList.add('show');
+        }
+        function closeVideo() {
+            document.getElementById('videoModal').classList.remove('show');
+            document.getElementById('modalIframe').src = "";
+        }
+        window.onclick = function(event) {
+            let modal = document.getElementById('videoModal');
+            if (event.target == modal) { closeVideo(); }
+        }
+    </script>
 </body>
 </html>
