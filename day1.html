@@ -1,31 +1,108 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Day 1 ｜ 夜間抵達，迅速安頓 - 2026 釜山家族旅行</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .timeline { margin: 30px 0; padding-left: 20px; border-left: 3px solid rgba(255,255,255,0.2); }
-        .timeline-item { position: relative; margin-bottom: 25px; padding-left: 25px; }
-        .timeline-item::before {
-            content: ''; position: absolute; left: -31px; top: 0; width: 12px; height: 12px;
-            background: #fff; border-radius: 50%; box-shadow: 0 0 10px rgba(255,255,255,0.5);
+        .timeline {
+            margin: 30px 0;
+            padding-left: 20px;
+            border-left: 3px solid rgba(255, 255, 255, 0.2);
         }
-        .time-badge { display: inline-block; background: rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 20px; font-weight: 600; margin-bottom: 10px; font-size: 0.9em; }
-        .timeline-content h3 { margin: 0 0 10px 0; font-size: 1.2em; color: #fff; }
-        .timeline-content p { margin: 0; color: rgba(255,255,255,0.85); line-height: 1.6; }
-        
-        .action-links { margin-top: 12px; margin-bottom: 8px; }
-        .action-links a { color: #fff; text-decoration: none; background: rgba(255,255,255,0.15); padding: 5px 12px; border-radius: 6px; font-size: 0.85em; margin-right: 8px; margin-bottom: 8px; display: inline-block; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.1); }
-        .action-links a:hover { background: rgba(255,255,255,0.3); transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-        .action-links a.site-link { background: rgba(52, 152, 219, 0.3); border-color: rgba(52, 152, 219, 0.5); }
-        .action-links a.site-link:hover { background: rgba(52, 152, 219, 0.6); }
-        .timeline-img { width: 100%; max-width: 500px; border-radius: 12px; margin-top: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.3); display: block; border: 1px solid rgba(255,255,255,0.1); }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding-left: 25px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .time-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+
+        .timeline-content h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            color: #fff;
+        }
+
+        .timeline-content p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+        }
+
+        .action-links {
+            margin-top: 12px;
+            margin-bottom: 8px;
+        }
+
+        .action-links a {
+            color: #fff;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 5px 12px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .action-links a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .action-links a.site-link {
+            background: rgba(52, 152, 219, 0.3);
+            border-color: rgba(52, 152, 219, 0.5);
+        }
+
+        .action-links a.site-link:hover {
+            background: rgba(52, 152, 219, 0.6);
+        }
+
+        .timeline-img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            margin-top: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            display: block;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
     </style>
 </head>
+
 <body>
     <nav id="navbar" class="scrolled">
         <div class="logo">Busan 2026</div>
@@ -38,24 +115,28 @@
         <div class="hero-bg" style="background-image: url('images/day1_main.png');"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="fade-in-up">Day 1 ｜ 飛抵釜山，好好睡一覺</h1>
-            <p class="dates fade-in-up delay-1">5/9 (六) - 啟航釜山，養足精神再出發</p>
+            <h1 class="fade-in-up">Day 1 ｜ 起飛囉！今晚先好好睡一覺</h1>
+            <p class="dates fade-in-up delay-1">5/9 (六) — 一起飛向釜山，旅程正式開始！</p>
         </div>
     </header>
 
     <main class="article-content glass fade-in-up delay-2">
         <div class="article-block">
             <h2>行程時間表</h2>
-            
+
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="time-badge">17:55 - 21:35</div>
                     <div class="timeline-content">
-                        <h3>飛抵金海機場</h3>
-                        <p>帶著期待的心情搭機抵達釜山金海機場。</p>
+                        <h3>✈️ 降落！歡迎抵達釜山金海機場</h3>
+                        <p>帶著滿滿期待，一家人終於平安降落！下了飛機先深呼吸一口韓國的空氣，旅程正式展開囉 🎉</p>
                         <div class="action-links">
-                            <a href="https://map.naver.com/p/search/김해국제공항" target="_blank"><i class="fas fa-map-marked-alt"></i> Naver Map</a>
-                            <a href="https://www.google.com/maps/search/?api=1&query=Gimhae+International+Airport" target="_blank"><i class="fas fa-map-marker-alt"></i> Google Maps</a>
+                            <button class="copy-address-btn" onclick="copyGlobalText('부산 강서구 공항진입로 108', this)"><i
+                                    class="far fa-copy"></i> 複製韓文地址</button>
+                            <a href="https://map.naver.com/p/search/김해국제공항" target="_blank"><i
+                                    class="fas fa-map-marked-alt"></i> Naver Map</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Gimhae+International+Airport"
+                                target="_blank"><i class="fas fa-map-marker-alt"></i> Google Maps</a>
                         </div>
                     </div>
                 </div>
@@ -63,11 +144,16 @@
                 <div class="timeline-item">
                     <div class="time-badge">22:15 - 23:00</div>
                     <div class="timeline-content">
-                        <h3>專屬大型計程車直達飯店</h3>
-                        <p>出關後我們不擠地鐵，直接叫一台寬敞的大型計程車 <strong>(Kakao T Venti)</strong>，舒舒服服地直達釜山站的飯店。</p>
+                        <h3>🚐 我們不擠地鐵！直接包大車回飯店</h3>
+                        <p>行李多、人多，出關後直接叫一台 <strong>Kakao T Venti</strong> 大型計程車，寬寬敞敞地坐回釜山站的飯店。拉著行李在地鐵人擠人太累了，直接包大車最舒服！
+                        </p>
                         <div class="action-links">
-                            <a href="https://map.naver.com/p/search/부산역%20시티호텔" target="_blank"><i class="fas fa-map-marked-alt"></i> Naver Map</a>
-                            <a href="https://www.google.com/maps/search/?api=1&query=Busan+Station+City+Hotel" target="_blank"><i class="fas fa-map-marker-alt"></i> Google Maps</a>
+                            <button class="copy-address-btn" onclick="copyGlobalText('부산광역시 동구 중앙대로 294', this)"><i
+                                    class="far fa-copy"></i> 複製韓文地址</button>
+                            <a href="https://map.naver.com/p/search/부산역%20시티호텔" target="_blank"><i
+                                    class="fas fa-map-marked-alt"></i> Naver Map</a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Busan+Station+City+Hotel"
+                                target="_blank"><i class="fas fa-map-marker-alt"></i> Google Maps</a>
                         </div>
                     </div>
                 </div>
@@ -75,15 +161,16 @@
                 <div class="timeline-item">
                     <div class="time-badge">23:00</div>
                     <div class="timeline-content">
-                        <h3>洗洗睡，養精蓄銳</h3>
-                        <p>辦理入住。今晚不安排行程，全家人洗個熱水澡好好睡一覺，把精神養得飽飽的！</p>
+                        <h3>🛁 洗個熱水澡，早早睡覺！</h3>
+                        <p>辦完入住，今晚完全沒有行程壓力。大家好好沖個澡、放鬆一下，把精神養得飽飽的——明天才有力氣大玩特玩！</p>
                     </div>
                 </div>
             </div>
 
             <div class="info-box">
-                <h4>📌 貼心小提醒</h4>
-                <p>下飛機後記得先開 eSIM 或插入韓國 SIM 卡確認上網正常，入境卡在機上就可以先填好省時間。到行李轉盤前可以先上個廁所，韓國機場的廁所又乾淨又不用排隊～今晚早點休息，養足精神明天才有體力玩！</p>
+                <h4>📌 落地小提醒</h4>
+                <p>下飛機第一件事：打開 eSIM 或換上韓國 SIM
+                    卡，確認手機能上網。入境卡如果在飛機上沒填，現在正好補上。走到行李轉盤前可以先去上個廁所，韓國機場廁所超乾淨而且幾乎不用排隊！今晚早點休息，明天一早才有電量大玩。</p>
             </div>
         </div>
 
@@ -93,7 +180,10 @@
         </div>
     </main>
 
-    <footer><p>Designed with ❤️ for a wonderful 2026 family trip.</p></footer>
+    <footer>
+        <p>Designed with ❤️ for a wonderful 2026 family trip.</p>
+    </footer>
     <script src="music.js"></script>
 </body>
+
 </html>

@@ -123,4 +123,106 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     
     tryAutoplay();
+
+    // ====== 新增全域 UI 功能 (回到頂端、翻譯字卡) ======
+    
+    // 1. 回到頂端按鈕
+    const backToTopHtml = `<div id="backToTopBtn" title="回到最上方"><i class="fas fa-chevron-up"></i></div>`;
+    document.body.insertAdjacentHTML('beforeend', backToTopHtml);
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+    
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // 2. 韓文字卡 Modal 與 按鈕
+    const flashcardHtml = `
+        <div id="flashcardBtn" title="求生韓文字卡"><i class="fas fa-language"></i></div>
+        <div id="flashcardModal">
+            <div class="flashcard-content">
+                <span class="close-modal" id="closeFlashcard">&times;</span>
+                <div class="flashcard-item">
+                    <div class="flashcard-kr">화장실이 어디예요?</div>
+                    <div class="flashcard-zh">請問洗手間在哪裡？</div>
+                </div>
+                <div class="flashcard-item">
+                    <div class="flashcard-kr">얼음 적게 주세요.</div>
+                    <div class="flashcard-zh">麻煩請給我少冰。</div>
+                </div>
+                <div class="flashcard-item">
+                    <div class="flashcard-kr">전혀 맵지 않게 해주세요.</div>
+                    <div class="flashcard-zh">請做完全不辣的（不要放辣椒）。</div>
+                </div>
+                <div class="flashcard-item">
+                    <div class="flashcard-kr">계산해 주세요.</div>
+                    <div class="flashcard-zh">麻煩結帳！</div>
+                </div>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', flashcardHtml);
+    
+    const flashcardBtn = document.getElementById('flashcardBtn');
+    const flashcardModal = document.getElementById('flashcardModal');
+    const closeFlashcard = document.getElementById('closeFlashcard');
+    
+    flashcardBtn.addEventListener('click', () => {
+        flashcardModal.classList.add('show');
+    });
+    
+    closeFlashcard.addEventListener('click', () => {
+        flashcardModal.classList.remove('show');
+    });
+    
+    flashcardModal.addEventListener('click', (e) => {
+        if (e.target === flashcardModal) {
+            flashcardModal.classList.remove('show');
+        }
+    });
+
 });
+
+// === 全域共用的複製韓文功能 ===
+window.copyGlobalText = function(text, btnElement) {
+    if(navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(() => {
+            showCopySuccess(btnElement);
+        });
+    } else {
+        // Fallback for non-HTTPS local testing
+        let textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.style.position = "fixed";
+        textArea.style.left = "-999999px";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+            document.execCommand('copy');
+            showCopySuccess(btnElement);
+        } catch (err) {
+            console.error('Fallback: Oops, unable to copy', err);
+        }
+        document.body.removeChild(textArea);
+    }
+};
+
+function showCopySuccess(btnElement) {
+    const originalHtml = btnElement.innerHTML;
+    btnElement.innerHTML = '<i class="fas fa-check"></i> 已複製!';
+    btnElement.style.background = 'rgba(76, 175, 80, 0.6)';
+    btnElement.style.borderColor = 'rgba(76, 175, 80, 0.8)';
+    setTimeout(() => {
+        btnElement.innerHTML = originalHtml;
+        btnElement.style.background = '';
+        btnElement.style.borderColor = '';
+    }, 2000);
+}
